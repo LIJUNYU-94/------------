@@ -4,3 +4,490 @@
   margin: 0;
   padding: 0;
 }
+
+/*全ページ共通パーツ*/
+/*スマホ*/
+
+body {
+  width: 100%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Carrois Gothic", Arial,
+    sans-serif;
+  font-size: 16px;
+  background-color: rgb(241, 249, 244);
+}
+#container {
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: url(../img/hpbackground.png);
+}
+h3 {
+  font-family: "HGPGothicS";
+  width: 80%;
+  font-size: 24px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  letter-spacing: 7px;
+}
+h3::before {
+  content: "";
+  width: 24%;
+  border-top: 2px solid#13b148;
+  position: absolute;
+  top: 74px;
+  left: 38%;
+}
+.backtotop {
+  width: 50px;
+  height: 50px;
+  border-radius: 180px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  opacity: 0.7;
+  /* display: none; */
+  /* noneは通常*/
+  background-color: #e25407;
+}
+.backtotop::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\0ab";
+  font-size: 25px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform: rotate(90deg);
+}
+.backtotop:hover {
+  opacity: 1;
+}
+
+.pc-only {
+  display: none;
+}
+header {
+  h1 {
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    margin: 35px 5% 25px 5%;
+    width: 90%;
+    font-size: 16px;
+    letter-spacing: 0.48px;
+    position: relative;
+    z-index: 10;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 100;
+      text-align: center;
+      display: block;
+      width: 80%;
+      padding: 20px 0 20px 5%;
+      font-family: "Zen Maru Gothic";
+    }
+
+    span {
+      width: 62%;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    border-radius: 180px;
+    .logo {
+      position: absolute;
+      top: -42px;
+      left: -23px;
+    }
+    .all-menu {
+      position: absolute;
+      right: 5%;
+      top: 25%;
+    }
+  }
+  .all-navp {
+    background: #13b148;
+    width: 100%;
+    max-width: 480px;
+    position: absolute;
+    top: -100vh; /*0で調整、-100vhは通常*/
+    letter-spacing: 1.2px;
+    font-family: "Gothic A1";
+    height: 100vh;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+    h4 {
+      color: white;
+      font-weight: 300;
+      font-size: 20px;
+      width: fit-content;
+
+      a {
+        font-size: 20px;
+      }
+      margin: 4vh 0 4vh 10%;
+    }
+    h4:first-child {
+      margin-top: 25vh;
+    }
+    h4:last-child:hover {
+      background-color: #2b5e2b;
+    }
+    ul {
+      list-style-type: none;
+      width: 313px;
+      margin: 0 auto;
+      li {
+        color: white;
+        padding: 2vh 0 2vh 20px;
+      }
+      li:hover {
+        background-color: #e25407;
+        opacity: 80%;
+      }
+    }
+  }
+}
+footer {
+  background: #13b148;
+  width: 100%;
+  max-width: 480px;
+  letter-spacing: 1.2px;
+  font-family: "Gothic A1";
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 90% 10%;
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+  }
+  h4 {
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    width: fit-content;
+
+    a {
+      font-size: 20px;
+    }
+    margin: 3vh 0 3vh 10%;
+  }
+  h4:first-child {
+    padding-top: 3vh;
+  }
+  ul {
+    list-style-type: none;
+    width: 313px;
+    margin: 0 auto;
+    li {
+      color: white;
+      padding: 2vh 0 2vh 20px;
+    }
+    li:hover {
+      background-color: #e25407;
+      opacity: 80%;
+    }
+  }
+  small {
+    color: white;
+    display: block;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+/**/
+.all-room-title {
+  text-align: center;
+  margin: 50px;
+  font-size: 24px;
+  font-family: "Gothic A1";
+  letter-spacing: 1.12px;
+  line-height: 50px;
+}
+.sub-keyvisual {
+  width: 95%;
+  margin: 0 auto 50px;
+  img {
+    width: 100%;
+  }
+  figcaption {
+    text-align: center;
+  }
+}
+/*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/
+
+/*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/
+.hp-container {
+  .hp-firstview {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto;
+    h2 {
+      font-family: "Century Gothic";
+      margin-left: 5%;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 12vh;
+      transform: rotate(-2deg);
+      span {
+        color: #44ff62;
+        font-size: 56px;
+        padding-right: 3px;
+      }
+      span:first-child {
+        color: #a192ff;
+      }
+      span:last-child {
+        color: #f09c60;
+      }
+    }
+    .hpp-keyvisual {
+      padding-top: 25px;
+      text-align: center;
+
+      transform: rotate(-2.344deg);
+      img {
+        height: 30vh;
+      }
+    }
+    p {
+      grid-column: 1/3;
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      top: 10vh;
+      line-height: 40px;
+      font-family: "Franklin Gothic Medium";
+      font-weight: 400;
+    }
+    p::before {
+      content: "";
+      width: 44%;
+      border-top: 2px solid#13b148;
+      position: absolute;
+      top: -5.5vh;
+      left: 28%;
+    }
+  }
+  .hp-article {
+    margin-top: 100px;
+    background-image: url(../img/green背景.png);
+    .hp-keyvisual {
+      width: 93%;
+      margin: 100px auto;
+      padding-top: 15px;
+      grid-column: 1/3;
+      img {
+        width: 100%;
+      }
+    }
+    p {
+      width: 95%;
+      margin: 80px auto;
+      color: #000;
+      font-family: HGSGothicM;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 50px;
+      letter-spacing: 1.12px;
+      padding-bottom: 50px;
+    }
+  }
+  .hp-seventh {
+    figure {
+      width: 95%;
+      margin: 20px auto;
+      img {
+        width: 100%;
+      }
+    }
+    ul {
+      margin: 100px auto 0;
+      display: flex;
+      flex-flow: column;
+      gap: 15px;
+      list-style-type: none;
+
+      .hp-seventh-img {
+        width: 50%;
+        float: left;
+      }
+      .hp-seventh-room {
+        float: right;
+        padding: 0 0 10px 10px;
+      }
+      a {
+        text-decoration: none;
+      }
+      p {
+        padding: 30px 0 20px 54%;
+        color: #fff;
+        font-family: "Zen Maru Gothic";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0.8px;
+      }
+      .text771 {
+        background: rgba(42, 82, 187, 0.8);
+      }
+      .text772 {
+        background: rgba(24, 132, 54, 0.8);
+      }
+      .text773 {
+        background: rgba(210, 120, 56, 0.8);
+      }
+    }
+  }
+  .hp-news-fluent {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+
+    figure {
+      height: 300px;
+      width: 90%;
+      border: 2px solid #13b148;
+      position: absolute;
+      left: 5%;
+      top: 0;
+      figcaption {
+        text-align: center;
+        letter-spacing: 0.14px;
+        .hp-news-time {
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+  .hp-news-fluent::before {
+    content: "";
+    width: 33px;
+    height: 33px;
+    border-radius: 180px;
+    background-image: url(../img/news-left.png);
+    position: absolute;
+    left: 2%;
+    bottom: -160px;
+    z-index: 10;
+  }
+  .hp-news-fluent::after {
+    content: "";
+    width: 33px;
+    height: 33px;
+    border-radius: 180px;
+    background-image: url(../img/news-right.png);
+    position: absolute;
+    right: 1.5%;
+    bottom: -160px;
+    z-index: 10;
+  }
+  #hp-admission {
+    margin-top: 450px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      width: 90%;
+      margin: 50px auto;
+      gap: 5%;
+      li {
+        margin: 30px 0 20px;
+        width: 30%;
+        text-align: center;
+        height: 100px;
+        background-color: #13b148;
+        border-radius: 10px;
+      }
+      a {
+        line-height: 24px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        display: block;
+        padding-top: 36px;
+        letter-spacing: 0.2em;
+        font-family: "HGPGothicE";
+      }
+      li:nth-child(2) {
+        a {
+          padding-top: 26px;
+        }
+      }
+    }
+  }
+}
+
+.code-container {
+  article {
+    background-image: url(../img/green背景.png);
+    position: relative;
+    padding-bottom: 50px;
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 10px;
+      font-family: HGSGothicM;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 50px;
+      letter-spacing: 1.12px;
+      span {
+        border-radius: 5px;
+      }
+      #span-html {
+        background-color: rgb(226, 184, 105);
+      }
+      #span-css {
+        background-color: rgb(123, 236, 236);
+      }
+      #span-js {
+        background-color: #4db971;
+      }
+      #span-text {
+        font-weight: 800;
+        font-size: 110%;
+      }
+      #span-ps {
+        background-color: rgb(149, 228, 228);
+      }
+      #span-ill {
+        background-color: rgb(187, 158, 104);
+      }
+      #span-figma {
+        background-color: #8dca8d;
+      }
+      #span-enter {
+        background-color: #44ff62;
+      }
+      img {
+        display: block;
+        margin: 30px 0;
+        width: 100%;
+      }
+    }
+    .enter {
+      position: absolute;
+      bottom: 50px;
+      right: 12.5%;
+    }
+    .enter:hover {
+      opacity: 0.5;
+    }
+  }
+}
