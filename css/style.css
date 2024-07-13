@@ -225,6 +225,14 @@ footer {
     text-align: center;
   }
 }
+.span-stress {
+  font-weight: 800;
+}
+.enter {
+  position: absolute;
+  bottom: 50px;
+  right: 12.5%;
+}
 /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/
 
 /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/
@@ -284,7 +292,7 @@ footer {
   }
   .hp-article {
     margin-top: 100px;
-    background-image: url(../img/green背景.png);
+    background-image: url(../img/green3.jpg);
     .hp-keyvisual {
       width: 93%;
       margin: 100px auto;
@@ -351,6 +359,9 @@ footer {
       }
       .text773 {
         background: rgba(210, 120, 56, 0.8);
+      }
+      .hp-seventh-text:hover {
+        opacity: 0.7;
       }
     }
   }
@@ -435,7 +446,7 @@ footer {
 
 .code-container {
   article {
-    background-image: url(../img/green背景.png);
+    background-image: url(../img/green3.jpg);
     position: relative;
     padding-bottom: 50px;
     p {
@@ -481,13 +492,58 @@ footer {
         width: 100%;
       }
     }
-    .enter {
-      position: absolute;
-      bottom: 50px;
-      right: 12.5%;
-    }
+
     .enter:hover {
       opacity: 0.5;
+    }
+  }
+}
+
+/*772と771の違うところ*/
+#plan-important {
+  display: block;
+  text-align: center;
+  font-size: 140%;
+  font-weight: 800;
+}
+
+/*772と771の違うところ*/
+.life-container {
+  article {
+    position: relative;
+    background: url(../img/green3.jpg) 50% 50%;
+    p {
+      position: relative;
+      width: 90%;
+      color: black;
+      padding: 30px 0;
+      margin: 30px auto 0;
+      width: 90%;
+
+      font-family: HGSGothicM;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 50px;
+      letter-spacing: 1.12px;
+      a {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 18px;
+      }
+      span {
+        color: rgb(69, 6, 69);
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    p:last-child::before {
+      content: "";
+      height: 3px;
+      background-color: #13b148;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      opacity: 0.7;
     }
   }
 }
