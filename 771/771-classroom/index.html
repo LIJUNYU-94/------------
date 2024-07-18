@@ -3,45 +3,174 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/771.js" defer></script>
     <title>オンラインオープンキャンパス｜日本電子専門学校Webデザイン科</title>
   </head>
   <body>
-    <div id="mockclass room771">
+    <main class="mockclass room771">
       <section class="room771-background">
-        <div class="room771-background-whiteboard"></div>
+        <img
+          class="room771-roombackground"
+          src="../../img/771mockbackgournd.png"
+          alt="771背景"
+        />
+        <div class="room771-background-whiteboard">
+          <img src="../../img/whiteboard 1whiteboard.png" alt="whiteboard" />
+          <p class="room771-whiteboard-text">
+            position: relative position: relative position: relative
+          </p>
+        </div>
       </section>
       <section class="room771-screen">
-        <h2 class="room771-screen-header"></h2>
-        <ul class="room771-screen-nav">
-          <li>index.html</li>
-          <li>style.css</li>
-          <li>script.js</li>
-        </ul>
-        <p class="room771-screen-pass">
-          まいばすけっと > <span class="room771-screen-pass-now"></span>
-        </p>
-        <div class="room771-screen-mock"></div>
+        <div class="room771-screen-op">
+          <div class="room771-screen-header">
+            <p>
+              <img
+                class="room771-screen-header-icon"
+                src="../../img/logos_visual-studio-codevs.png"
+                alt="vs"
+              />
+              <span class="room771-screen-header-name">visual studio code</span>
+            </p>
+          </div>
+
+          <div class="room771-screen-mock">
+            <!-- 操作の画面はこちら -->
+            <div class="mock-folder">
+              <ul class="room771-screen-nav nav-folder">
+                <!-- .room771-screen-nav-openをしたらactive -->
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/logo-folder.png"
+                    alt="folder"
+                  /><span class="room771-screen-nav-text">写真素材大</span>
+                </li>
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/logo-folder.png"
+                    alt="folder"
+                  /><span class="room771-screen-nav-text">写真素材小</span>
+                </li>
+              </ul>
+              <p class="room771-screen-pass">
+                <span class="room771-screen-pass-title"></span>><span
+                  class="room771-screen-pass-now"
+                ></span>
+                <!-- jsでpass-nowにindex.html style.css script.jsを切り替え -->
+                <!-- どちもtitleが一緒 -->
+                <!-- browserの場合は、nowは要件とタイトル -->
+                <!-- folderの場合は、nowは背景素材と写真素材 -->
+              </p>
+            </div>
+            <div class="mock-vs">
+              <ul class="room771-screen-nav nav-vs">
+                <!-- .room771-screen-nav-openをしたらactive -->
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/vs-html11_10.png"
+                    alt="html"
+                  /><span class="room771-screen-nav-text"
+                    ><span class="pc-only">index.</span>html</span
+                  >
+                </li>
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/vs-css11_10.png"
+                    alt="css"
+                  /><span class="room771-screen-nav-text"
+                    ><span class="pc-only">style.</span>css</span
+                  >
+                </li>
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/vs-js11_10.png"
+                    alt="js"
+                  /><span class="room771-screen-nav-text"
+                    ><span class="pc-only">script.</span>js</span
+                  >
+                </li>
+              </ul>
+              <p class="room771-screen-pass">
+                <span class="room771-screen-pass-title">1</span>><span
+                  class="room771-screen-pass-now"
+                  >1</span
+                >
+                <!-- jsでpass-nowにindex.html style.css script.jsを切り替え -->
+                <!-- どちもtitleが一緒 -->
+                <!-- browserの場合は、nowは要件とタイトル -->
+                <!-- folderの場合は、nowは背景素材と写真素材 -->
+              </p>
+              <div class="mock-vs-input input-html">
+                <textarea name="html" id="mock-html"></textarea>
+              </div>
+              <div class="mock-vs-input input-css">
+                <textarea name="css" id="mock-css"></textarea>
+              </div>
+              <div class="mock-vs-input input-js open">
+                <textarea name="js" id="mock-js"></textarea>
+              </div>
+            </div>
+            <div class="mock-browser">
+              <ul class="room771-screen-nav nav-browser">
+                <!-- .room771-screen-nav-openをしたらactive -->
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/logo-chrome.png"
+                    alt="folder"
+                  /><span class="room771-screen-nav-text">依頼内容</span>
+                </li>
+                <li>
+                  <img
+                    class="room771-screen-nav-icon"
+                    src="../../img/logo-chrome.png"
+                    alt="folder"
+                  /><span class="room771-screen-nav-text">タイトル</span>
+                </li>
+              </ul>
+              <p class="room771-screen-pass">
+                <span class="room771-screen-pass-title">1</span>><span
+                  class="room771-screen-pass-now"
+                  >1</span
+                >
+                <!-- jsでpass-nowにindex.html style.css script.jsを切り替え -->
+                <!-- どちもtitleが一緒 -->
+                <!-- browserの場合は、nowは要件とタイトル -->
+                <!-- folderの場合は、nowは背景素材と写真素材 -->
+              </p>
+            </div>
+          </div>
+        </div>
         <ul class="room771-screen-footer">
-          <li>
-            <img src="../../img/clarity_folder-linefolder.png" alt="folder" />
+          <li class="room771-screen-footer-icon">
+            <!-- class="room771-screen-footer-open" -->
+            <img src="../../img/logo-folder.png" alt="folder" />
           </li>
-          <li>
+          <li class="room771-screen-footer-icon">
             <img src="../../img/logos_visual-studio-codevs.png" alt="vs" />
           </li>
-          <li>
-            <img
-              src="../../img/devicon_chrome-wordmarkchrome.png"
-              alt="browser"
-            />
+          <li class="room771-screen-footer-icon">
+            <img src="../../img/logo-chrome.png" alt="browser" />
           </li>
         </ul>
       </section>
-      <section class="room771-char">
+      <section class="room-char">
         <img src="../../img/Rectangle56ibuki.png" alt="ibuki" />
-        <p class="room771-text"></p>
+        <div>
+          <p class="room-char-name">いぶき：</p>
+          <p class="room-char-text">
+            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
+            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
+            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
+          </p>
+        </div>
       </section>
-    </div>
+    </main>
   </body>
 </html>

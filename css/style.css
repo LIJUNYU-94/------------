@@ -1,5 +1,60 @@
 @charset "utf-8";
 
+@keyframes light {
+  100% {
+    outline-color: transparent;
+    outline-offset: 12px;
+  }
+}
+@keyframes keywave {
+  33% {
+    transform: rotate(5deg);
+  }
+  66% {
+    transform: rotate(-9deg);
+  }
+  100% {
+    transform: rotate(-2.344deg);
+  }
+}
+@keyframes titlebackground {
+  0%,
+  100% {
+    background-color: #1e90ff;
+  }
+  25% {
+    background-color: #39d24a;
+  }
+  50% {
+    background-color: #ffe244;
+  }
+  75% {
+    background-color: #13b148;
+  }
+}
+@keyframes float {
+  25% {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+  }
+
+  50% {
+    position: absolute;
+    top: 80%;
+    left: 90%;
+  }
+  75% {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+  }
+  100% {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -14,112 +69,172 @@ body {
     sans-serif;
   font-size: 16px;
   background-color: rgb(241, 249, 244);
-}
-#container {
-  max-width: 480px;
-  margin: 0 auto;
-  border: 1px solid black;
-  background: url(../img/hpbackground.png);
-}
-h3 {
-  font-family: "HGPGothicS";
-  width: 80%;
-  font-size: 24px;
-  margin: 50px auto;
-  text-align: center;
-  position: relative;
-  letter-spacing: 7px;
-}
-h3::before {
-  content: "";
-  width: 24%;
-  border-top: 2px solid#13b148;
-  position: absolute;
-  top: 74px;
-  left: 38%;
-}
-.backtotop {
-  width: 50px;
-  height: 50px;
-  border-radius: 180px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10;
-  opacity: 0.7;
-  /* display: none; */
-  /* noneは通常*/
-  background-color: #e25407;
-}
-.backtotop::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\0ab";
-  font-size: 25px;
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  transform: rotate(90deg);
-}
-.backtotop:hover {
-  opacity: 1;
-}
 
-.pc-only {
-  display: none;
-}
-header {
-  h1 {
-    height: 100px;
-    background-color: rgb(255, 255, 255);
-    margin: 35px 5% 25px 5%;
-    width: 90%;
-    font-size: 16px;
-    letter-spacing: 0.48px;
+  #container {
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid black;
+    background: url(../img/hpbackground.png);
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    z-index: 1;
+    height: 100vh;
+    background: radial-gradient(circle at bottom, #fff, transparent 80%),
+      linear-gradient(to top, dodgerblue 0%, transparent 70%),
+      linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4) 70%),
+      #1e90ff;
+    animation: titlebackground 30s infinite;
+  }
+  h3 {
+    font-family: "HGPGothicS";
+    width: 80%;
+    font-size: 24px;
+    margin: 50px auto;
+    text-align: center;
     position: relative;
-    z-index: 10;
-    a {
-      text-decoration: none;
-      color: black;
-      font-weight: 100;
-      text-align: center;
-      display: block;
-      width: 80%;
-      padding: 20px 0 20px 5%;
-      font-family: "Zen Maru Gothic";
-    }
-
-    span {
-      width: 62%;
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-    }
-
+    letter-spacing: 7px;
+  }
+  h3::before {
+    content: "";
+    width: 24%;
+    border-top: 2px solid#13b148;
+    position: absolute;
+    top: 74px;
+    left: 38%;
+  }
+  .backtotop {
+    width: 50px;
+    height: 50px;
     border-radius: 180px;
-    .logo {
-      position: absolute;
-      top: -42px;
-      left: -23px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    opacity: 0.7;
+    /* display: none; */
+    /* noneは通常*/
+    background-color: #e25407;
+  }
+  .backtotop::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\0ab";
+    font-size: 25px;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transform: rotate(90deg);
+  }
+  .backtotop:hover {
+    opacity: 1;
+  }
+
+  .pc-only {
+    display: none;
+  }
+  header {
+    h1 {
+      height: 100px;
+      background-color: rgb(255, 255, 255);
+      margin: 35px 5% 25px 5%;
+      width: 90%;
+      font-size: 16px;
+      letter-spacing: 0.48px;
+      position: relative;
+      z-index: 10;
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 100;
+        text-align: center;
+        display: block;
+        width: 80%;
+        padding: 20px 0 20px 5%;
+        font-family: "Zen Maru Gothic";
+      }
+
+      span {
+        width: 62%;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+      }
+
+      border-radius: 180px;
+      .logo {
+        position: absolute;
+        top: -42px;
+        left: -23px;
+      }
+      .all-menu {
+        position: absolute;
+        right: 5%;
+        top: 25%;
+      }
     }
-    .all-menu {
+    .all-navp {
+      background: #13b148;
+      width: 100%;
+      max-width: 480px;
       position: absolute;
-      right: 5%;
-      top: 25%;
+      top: -100vh; /*0で調整、-100vhは通常*/
+      letter-spacing: 1.2px;
+      font-family: "Gothic A1";
+      height: 100vh;
+      z-index: 10;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+      }
+      h4 {
+        color: white;
+        font-weight: 300;
+        font-size: 20px;
+        width: fit-content;
+
+        a {
+          font-size: 20px;
+        }
+        margin: 4vh 0 4vh 10%;
+      }
+      h4:first-child {
+        margin-top: 25vh;
+      }
+      h4:first-child:hover {
+        margin-top: 25vh;
+      }
+      ul {
+        list-style-type: none;
+        width: 313px;
+        margin: 0 auto;
+        li {
+          color: white;
+          padding: 2vh 0 2vh 20px;
+        }
+        li:hover {
+          background-color: #e25407;
+          opacity: 80%;
+        }
+      }
     }
   }
-  .all-navp {
+  footer {
     background: #13b148;
     width: 100%;
     max-width: 480px;
-    position: absolute;
-    top: -100vh; /*0で調整、-100vhは通常*/
     letter-spacing: 1.2px;
     font-family: "Gothic A1";
     height: 100vh;
-
+    display: grid;
+    grid-template-rows: 90% 10%;
     a {
       text-decoration: none;
       color: white;
@@ -134,13 +249,10 @@ header {
       a {
         font-size: 20px;
       }
-      margin: 4vh 0 4vh 10%;
+      margin: 3vh 0 3vh 10%;
     }
     h4:first-child {
-      margin-top: 25vh;
-    }
-    h4:last-child:hover {
-      background-color: #2b5e2b;
+      padding-top: 3vh;
     }
     ul {
       list-style-type: none;
@@ -155,89 +267,55 @@ header {
         opacity: 80%;
       }
     }
-  }
-}
-footer {
-  background: #13b148;
-  width: 100%;
-  max-width: 480px;
-  letter-spacing: 1.2px;
-  font-family: "Gothic A1";
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 90% 10%;
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-  }
-  h4 {
-    color: white;
-    font-weight: 300;
-    font-size: 20px;
-    width: fit-content;
-
-    a {
-      font-size: 20px;
-    }
-    margin: 3vh 0 3vh 10%;
-  }
-  h4:first-child {
-    padding-top: 3vh;
-  }
-  ul {
-    list-style-type: none;
-    width: 313px;
-    margin: 0 auto;
-    li {
+    small {
       color: white;
-      padding: 2vh 0 2vh 20px;
+      display: block;
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
     }
-    li:hover {
-      background-color: #e25407;
-      opacity: 80%;
+  }
+  /**/
+  .all-room-title {
+    text-align: center;
+    margin: 50px;
+    font-size: 24px;
+    font-family: "Gothic A1";
+    letter-spacing: 1.12px;
+    line-height: 50px;
+    position: relative;
+    z-index: 10;
+  }
+  .sub-keyvisual {
+    width: 95%;
+    position: relative;
+    z-index: 10;
+    margin: 0 auto 50px;
+    img {
+      width: 100%;
+    }
+    figcaption {
+      text-align: center;
     }
   }
-  small {
-    color: white;
-    display: block;
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
+  .span-stress {
+    font-weight: 800;
+  }
+  .enter {
+    position: absolute;
+    bottom: 50px;
+    right: 12.5%;
   }
 }
-/**/
-.all-room-title {
-  text-align: center;
-  margin: 50px;
-  font-size: 24px;
-  font-family: "Gothic A1";
-  letter-spacing: 1.12px;
-  line-height: 50px;
-}
-.sub-keyvisual {
-  width: 95%;
-  margin: 0 auto 50px;
-  img {
-    width: 100%;
-  }
-  figcaption {
-    text-align: center;
-  }
-}
-.span-stress {
-  font-weight: 800;
-}
-.enter {
-  position: absolute;
-  bottom: 50px;
-  right: 12.5%;
-}
+
 /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/
 
 /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/
 .hp-container {
+  background-image: url(../img/white_00016\ .jpg) 20% 50%;
   .hp-firstview {
+    position: relative;
+    z-index: 10;
     width: 95%;
     margin: 0 auto;
     display: grid;
@@ -265,11 +343,26 @@ footer {
     .hpp-keyvisual {
       padding-top: 25px;
       text-align: center;
-
+      position: relative;
       transform: rotate(-2.344deg);
-      img {
+      .hpp-keyvisual-img {
         height: 30vh;
       }
+      .hpp-keyvisual-imgg {
+        position: absolute;
+        width: 35%;
+        top: 38%;
+        left: 31%;
+        z-index: 10;
+        transition-duration: 0.5s;
+        transform: rotate(1deg);
+      }
+      .hpp-keyvisual-imgg:hover {
+        transform: scale(1.5) rotate(1deg);
+      }
+    }
+    .hpp-keyvisual:hover {
+      animation: keywave 2s infinite;
     }
     p {
       grid-column: 1/3;
@@ -280,7 +373,9 @@ footer {
       line-height: 40px;
       font-family: "Franklin Gothic Medium";
       font-weight: 400;
+      font-size: 120%;
     }
+
     p::before {
       content: "";
       width: 44%;
@@ -291,6 +386,8 @@ footer {
     }
   }
   .hp-article {
+    position: relative;
+    z-index: 10;
     margin-top: 100px;
     background-image: url(../img/green3.jpg);
     .hp-keyvisual {
@@ -410,13 +507,21 @@ footer {
   }
   #hp-admission {
     margin-top: 450px;
+    padding-top: 1px;
+    background-image: url(../img/green背景.png);
+    p {
+      margin: 80px auto 0;
+      width: 80%;
+      line-height: 50px;
+    }
     ul {
       display: flex;
       justify-content: space-between;
       list-style-type: none;
       width: 90%;
-      margin: 50px auto;
+      margin: 50px auto 0;
       gap: 5%;
+      padding-bottom: 50px;
       li {
         margin: 30px 0 20px;
         width: 30%;
@@ -442,13 +547,22 @@ footer {
       }
     }
   }
+  .hp-go {
+    font-size: 20px;
+    font-weight: 700;
+    color: #655d97;
+  }
 }
 
+/*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/
+
+/*771と772共通のパーツ*/
 .code-container {
   article {
     background-image: url(../img/green3.jpg);
     position: relative;
     padding-bottom: 50px;
+    z-index: 9;
     p {
       width: 80%;
       margin: 0 auto;
@@ -498,6 +612,7 @@ footer {
     }
   }
 }
+/*771と772共通のパーツ*/
 
 /*772と771の違うところ*/
 #plan-important {
@@ -506,11 +621,13 @@ footer {
   font-size: 140%;
   font-weight: 800;
 }
-
 /*772と771の違うところ*/
+
+/*773教室*/
 .life-container {
   article {
     position: relative;
+    z-index: 10;
     background: url(../img/green3.jpg) 50% 50%;
     p {
       position: relative;
@@ -536,7 +653,7 @@ footer {
         font-weight: 700;
       }
     }
-    p:last-child::before {
+    .life-mock-text::before {
       content: "";
       height: 3px;
       background-color: #13b148;
@@ -545,5 +662,601 @@ footer {
       top: 0;
       opacity: 0.7;
     }
+    figure {
+      figcaption {
+        padding-top: 20px;
+        letter-spacing: 0.1em;
+      }
+    }
   }
 }
+/*773教室*/
+
+/*お問い合わせページ*/
+.contact-container {
+  position: relative;
+  z-index: 10;
+  background-image: url(../img/green背景.png);
+  padding-bottom: 50px;
+  h3 {
+    margin-top: 40px;
+    padding-top: 12px;
+  }
+  .contact-table {
+    width: 95%;
+    margin: 30px auto 0;
+    .contact-body {
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 70%;
+    }
+    .contact-item {
+      text-align: center;
+      width: 20%;
+      background-color: #13b148;
+    }
+    .form-text {
+      width: 90%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      max-width: 400px;
+    }
+    .form-textarea {
+      width: 90%;
+      padding: 10px;
+      height: 200px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  }
+  .contact-submit {
+    width: 30%;
+    display: block;
+    background-color: #13b148;
+    color: white;
+    font-weight: bold;
+    margin: 20px auto 0;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 100vh;
+    border: none;
+    cursor: pointer;
+    outline: 2px double;
+    outline-color: #13b148;
+    outline-offset: 1px;
+  }
+  .contact-submit:hover {
+    opacity: 0.9;
+    animation: light 0.9s infinite;
+    transition: margin-right 2s;
+  }
+}
+/*お問い合わせページ*/
+
+/*ニュースページ*/
+/*ニュースページ*/
+
+/*以下は模擬教室のパーツ*/
+/*模擬教室共通のパーツ*/
+.mockclass {
+  height: 900px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #000000; /*仮背景*/
+  /* Hide scrollbar */
+  p::-webkit-scrollbar {
+    display: none;
+  }
+  p {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Hide scrollbar */
+  display: flex;
+  flex-direction: column;
+  .room-char {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    background: rgb(19, 177, 72);
+    background: linear-gradient(
+      90deg,
+      rgba(19, 177, 72, 1) 0%,
+      rgba(119, 188, 143, 1) 49%,
+      rgba(22, 166, 71, 1) 100%
+    );
+    .room-char-name {
+      font-weight: 800;
+    }
+    .room-char-text {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      line-height: 22px;
+      height: 153px;
+      overflow-y: scroll;
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+}
+/*模擬教室共通のパーツ*/
+
+/*模擬教室771*/
+.room771 {
+  .room771-background {
+    position: relative;
+    .room771-roombackground {
+      width: 100.5%;
+    }
+    .room771-background-whiteboard {
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+      width: 38%;
+      img {
+        width: 100%;
+      }
+    }
+    .room771-whiteboard-text {
+      position: absolute;
+      right: 1.5%;
+      top: 20%;
+      width: 90%;
+      letter-spacing: 0.1em;
+      height: 60px;
+      overflow-y: scroll;
+    }
+  }
+  .room771-screen {
+    position: relative;
+    margin-top: -3px;
+    background-color: #16151c;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    .room771-screen-header {
+      margin-top: 17px;
+      display: block;
+      p {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #51514d;
+        color: white;
+        font-family: inter;
+        font-size: 14px;
+        text-align: center;
+        opacity: 0.8;
+        img {
+          width: 12px;
+          padding-right: 5px;
+        }
+      }
+    }
+
+    .room771-screen-op {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      .room771-screen-mock {
+        flex-grow: 1;
+        display: flex;
+        .room771-screen-nav {
+          list-style-type: none;
+          display: flex;
+          width: 95%;
+          padding-left: 5%;
+          margin: 0 auto;
+          background-color: #16151c;
+
+          gap: 2px;
+          li {
+            margin: 2px 0;
+            height: 25px;
+            width: 33%;
+            border: 2px solid #000;
+            padding-top: 4px;
+            background-color: rgb(31, 31, 31);
+            color: white;
+            font-size: 14px;
+            img {
+              width: 11px;
+              padding: 0 5px;
+            }
+          }
+          .room771-screen-nav-text.open {
+            font-weight: bold;
+            color: orange;
+          }
+        }
+        flex-grow: 1;
+
+        background-color: rgb(37, 35, 35);
+        .room771-screen-pass {
+          color: white;
+        }
+        .room771-screen-pass-title {
+          padding: 2px 5px 2px 5%;
+        }
+        .room771-screen-pass-now {
+          padding: 2px 0 2px 5px;
+        }
+      }
+    }
+
+    .mock-vs {
+      flex-grow: 1;
+      flex-direction: column;
+      .mock-vs-input {
+        flex-grow: 1;
+        display: none;
+        textarea {
+          margin: 2% 5%;
+          flex-grow: 1;
+        }
+      }
+      .mock-vs-input.open {
+        display: flex;
+      }
+    }
+    .mock-folder {
+      flex-grow: 1;
+      flex-direction: column;
+      /* display: flex; */
+      display: none;
+    }
+    .mock-browser {
+      flex-grow: 1;
+      flex-direction: column;
+      /* display: flex; */
+      display: none;
+    }
+    .room771-screen-footer {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      width: 100%;
+      background-color: #9e9e99;
+      gap: 10%;
+      li {
+        padding: 5px 5px 0 5px;
+        margin: 2px 0;
+
+        background-color: #686666;
+      }
+      .room771-screen-footer-icon.open {
+        background-color: #858585;
+        scale: 1.1;
+      }
+    }
+  }
+}
+/*模擬教室771*/
+
+/*模擬教室772*/
+.room772 {
+  .room772-mock {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .room772-wall {
+      width: 90%;
+      position: absolute;
+      top: 17%;
+      left: 5%;
+      iframe {
+        position: absolute;
+        top: 3%;
+        left: 5%;
+        z-index: 3;
+        height: 70%;
+        width: 70%;
+        display: none;
+      }
+      .googlemap {
+        display: block;
+      } /*jsのtoggleでonoff*/
+    }
+
+    .room772-wall-text {
+      width: 90%;
+      position: absolute;
+      top: 17%;
+      left: 5%;
+      /* display: none; */
+      /* jsで、入ってからここがblockにする */
+    }
+    .room772-pc {
+      position: absolute;
+      width: 68%;
+      top: 58%;
+      left: 24%;
+      transform: rotate(-1.66deg);
+      img {
+        width: 100%;
+      }
+      h2 {
+        position: absolute;
+        top: 7%;
+        left: 34%;
+        color: #13b148;
+      }
+      .room772-pc-screen {
+        .room772-pc-screen-text {
+          width: 70%;
+          height: 30%;
+          position: absolute;
+          top: 23%;
+          left: 13%;
+          overflow-y: scroll;
+        }
+        .room772-pc-screen-input {
+          display: flex;
+          width: 70%;
+          justify-content: space-between;
+          position: absolute;
+          top: 58%;
+          left: 13%;
+          font-size: 14px;
+          button {
+            display: inline-block;
+            background-color: #13b148;
+            color: white;
+            border-radius: 4px;
+            padding: 0 5px;
+          }
+          input {
+            width: 100%;
+            color: #13b148;
+          }
+        }
+      }
+    }
+  }
+  .room-char {
+    margin-top: -3px;
+  }
+  .room772-ban {
+    background-color: #13b148; /*仮背景*/
+    flex-grow: 1;
+    width: 100%;
+
+    background-image: url("https://raw.githubusercontent.com/Yousuke777/bg/main/sample-bg.png");
+
+    background-repeat: repeat-x;
+    background-size: 50%;
+  }
+}
+/*模擬教室772*/
+
+/*模擬教室773*/
+.room773 {
+  .life-mock-classroom {
+    opacity: 1;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .life-mock-switch {
+      border: #000 1px solid;
+      position: absolute;
+      width: 6%;
+      height: 4%;
+      top: 38%;
+      left: 50%;
+      opacity: 0;
+    } /*light off　全体的に暗くなる、10秒後自動的にon、whiteboardのものが変わる*/
+    .life-mock-whiteboard {
+      position: absolute;
+      width: 40%;
+      height: 20%;
+      top: 20%;
+      left: 2%;
+      img {
+        width: 80%;
+      }
+    } /*whiteboardに枠を作った、jsでランダムimgをinnerhtmlする*/
+    .life-mock-students {
+      /* position: absolute;
+      top: 40%;
+      left: 0;
+      width: 100%;
+      height: 60%; */
+      .life-mock-student {
+        width: 14%;
+        .life-mock-img {
+          width: 100%;
+          transform: rotate(-0.5deg);
+        }
+        .life-mock-name {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          font-weight: bold;
+          width: 100%;
+          z-index: 4;
+          text-align: center;
+        }
+      }
+      .life-mock-img:hover {
+        scale: 1.1;
+        cursor: pointer;
+      }
+      .student1 {
+        position: absolute;
+        top: 47%;
+        left: 5%;
+      }
+      .student2 {
+        position: absolute;
+        top: 46.5%;
+        left: 22%;
+      }
+      .student3 {
+        position: absolute;
+        top: 45.5%;
+        left: 60%;
+      }
+      .student4 {
+        position: absolute;
+        top: 45.5%;
+        left: 76%;
+      }
+      .student5 {
+        position: absolute;
+        top: 65%;
+        left: 0%;
+      }
+      .student6 {
+        position: absolute;
+        top: 64%;
+        left: 21%;
+      }
+      .student7 {
+        position: absolute;
+        top: 62.5%;
+        left: 62.5%;
+      }
+      .student8 {
+        position: absolute;
+        top: 62%;
+        left: 84%;
+      }
+    }
+  }
+  .life-mock-serif {
+    background-color: #5bc87fdb;
+    flex-grow: 1;
+    margin-top: -3px;
+
+    .life-mock-serif-name {
+      margin: 20px 5% 15px 5%;
+      font-size: 24px;
+      font-weight: bold;
+      .life-mock-serif-num {
+        padding: 0 5px;
+      }
+    }
+    .life-mock-serif-text {
+      font-weight: bold;
+      margin: 0 10%;
+      font-size: 20px;
+      color: #6f5555;
+      letter-spacing: 0.1em;
+      line-height: 22px;
+    }
+    .life-mock-game-switch {
+      margin: 0 10%;
+      display: none;
+      font-size: 14px;
+      color: black;
+      padding-top: 22px;
+      .life-mock-game-switch-button {
+        display: block;
+        letter-spacing: 0.3em;
+        width: 100px;
+        font-size: 20px;
+        height: 35px;
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  .life-mock-gamewindow {
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/gamewindowbackground1.png);
+    background-size: 120%;
+  }
+  .omikuji {
+    background: rgb(59, 55, 143);
+    background: linear-gradient(
+      0deg,
+      rgb(19, 24, 177) 0%,
+      rgb(119, 124, 188) 49%,
+      rgb(58, 22, 166) 100%
+    );
+    background-size: 50%;
+    display: none;
+    position: relative;
+    padding-top: 10px;
+    height: 100%;
+    z-index: 30;
+    /* display: none; */
+    h2 {
+      color: #121313;
+      width: fit-content;
+      margin: 10px auto;
+      position: relative;
+      z-index: 3;
+      font-size: 28px;
+    }
+    .omikuji-text {
+      position: absolute;
+      left: 10%;
+      top: 210px;
+      width: 80%;
+      font-size: 16px;
+      line-height: 20px;
+      opacity: 0.8;
+      text-align: center;
+      font-weight: bold;
+    }
+    .omikuji-float {
+      width: 8%;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      animation: float 10s infinite;
+      z-index: 2;
+    }
+    .omikuji-container {
+      width: 90%;
+      margin: 10px auto;
+
+      .omikuji-btn {
+        width: 30%;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: red;
+        outline: 1px solid #333;
+        padding: 5px 0;
+        color: white;
+        position: absolute;
+        top: 100px;
+        left: 35%;
+      }
+
+      .omikuji-result {
+        margin: 0 auto;
+        position: relative;
+        width: 17%;
+        z-index: 2;
+        .omikuji-img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .omikuji-video {
+    display: none;
+  }
+  .life-mock-gamewindow-text {
+    width: 50%;
+    margin: 20% auto;
+    p {
+      font-family: HGSGothicM;
+      line-height: 22px;
+      letter-spacing: 0.3em;
+      opacity: 0.5;
+    }
+    display: block;
+  }
+}
+
+/*模擬教室773*/
