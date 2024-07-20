@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Playwrite+BE+VLG:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Playwrite+BE+VLG:wght@100..400&family=Zen+Maru+Gothic&display=swap");
 @keyframes light {
   100% {
     outline-color: transparent;
@@ -54,6 +56,8 @@
     top: 5%;
     left: 5%;
   }
+}
+@keyframes news {
 }
 * {
   margin: 0;
@@ -147,7 +151,7 @@ body {
       font-size: 16px;
       letter-spacing: 0.48px;
       position: relative;
-      z-index: 10;
+      z-index: 12;
       a {
         text-decoration: none;
         color: black;
@@ -156,7 +160,8 @@ body {
         display: block;
         width: 80%;
         padding: 20px 0 20px 5%;
-        font-family: "Zen Maru Gothic";
+        /* font-family: "Zen Maru Gothic"; */
+        font-family: "Zen Maru Gothic", serif;
       }
 
       span {
@@ -176,6 +181,34 @@ body {
         position: absolute;
         right: 5%;
         top: 25%;
+        height: 50px;
+        width: 50px;
+        background-color: #13b148;
+        border-radius: 180px;
+        p {
+          height: 2px;
+          width: 20px;
+          background-color: white;
+        }
+        .all-menu-linea {
+          position: absolute;
+          top: 20px;
+          left: 15px;
+        }
+        .all-menu-lineb {
+          position: absolute;
+          top: 30px;
+          left: 15px;
+        }
+        .all-menu-linea.open {
+          transform: rotate(45deg);
+          top: 24px;
+        }
+
+        .all-menu-lineb.open {
+          transform: rotate(-45deg);
+          top: 24px;
+        }
       }
     }
     .all-navp {
@@ -185,9 +218,9 @@ body {
       position: absolute;
       top: -100vh; /*0で調整、-100vhは通常*/
       letter-spacing: 1.2px;
-      font-family: "Gothic A1";
+      font-family: "Zen Maru Gothic", serif; /* font-family: "Gothic A1"; */
       height: 100vh;
-      z-index: 10;
+      z-index: 11;
 
       a {
         text-decoration: none;
@@ -225,13 +258,19 @@ body {
         }
       }
     }
+    .all-navp.open {
+      top: 0;
+      position: fixed;
+    }
   }
+
   footer {
     background: #13b148;
     width: 100%;
     max-width: 480px;
     letter-spacing: 1.2px;
-    font-family: "Gothic A1";
+    /* font-family: "Gothic A1"; */
+    font-family: "Zen Maru Gothic", serif;
     height: 100vh;
     display: grid;
     grid-template-rows: 90% 10%;
@@ -303,8 +342,8 @@ body {
   }
   .enter {
     position: absolute;
-    bottom: 50px;
-    right: 12.5%;
+    bottom: 10px;
+    right: 5.5%;
   }
 }
 
@@ -322,7 +361,8 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
     h2 {
-      font-family: "Century Gothic";
+      /* font-family: "Century Gothic"; */
+      font-family: "Playwrite BE VLG", cursive;
       margin-left: 5%;
       font-size: 48px;
       font-weight: 400;
@@ -357,21 +397,18 @@ body {
         transition-duration: 0.5s;
         transform: rotate(1deg);
       }
-      .hpp-keyvisual-imgg:hover {
-        transform: scale(1.5) rotate(1deg);
-      }
     }
-    .hpp-keyvisual:hover {
+    .hpp-keyvisual.open {
       animation: keywave 2s infinite;
     }
     p {
       grid-column: 1/3;
-      width: 80%;
+      width: 85%;
       margin: 0 auto;
       position: relative;
       top: 10vh;
       line-height: 40px;
-      font-family: "Franklin Gothic Medium";
+      font-family: "Noto Serif JP", serif;
       font-weight: 400;
       font-size: 120%;
     }
@@ -403,7 +440,8 @@ body {
       width: 95%;
       margin: 80px auto;
       color: #000;
-      font-family: HGSGothicM;
+      font-family: "Zen Maru Gothic", serif;
+      /* font-family: HGSGothicM; */
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -439,13 +477,14 @@ body {
         text-decoration: none;
       }
       p {
-        padding: 30px 0 20px 54%;
+        padding: 10px 0 0 54%;
         color: #fff;
-        font-family: "Zen Maru Gothic";
-        font-size: 14px;
-        font-style: normal;
+        /* font-family: "Zen Maru Gothic"; */
+        font-family: "Zen Maru Gothic", serif;
+        font-size: 13px;
+
         font-weight: 300;
-        line-height: 24px;
+        line-height: 20px;
         letter-spacing: 0.8px;
       }
       .text771 {
@@ -462,57 +501,41 @@ body {
       }
     }
   }
-  .hp-news-fluent {
-    position: relative;
+  #hp-news {
     width: 100%;
-    margin-top: 80px;
+    height: fit-content;
 
-    figure {
-      height: 300px;
-      width: 90%;
-      border: 2px solid #13b148;
-      position: absolute;
-      left: 5%;
-      top: 0;
-      figcaption {
-        text-align: center;
-        letter-spacing: 0.14px;
-        .hp-news-time {
-          padding-left: 12px;
+    .splide__slide {
+      padding-top: 30px;
+      padding-bottom: 25px;
+      figure {
+        width: 90%;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+        figcaption {
+          text-align: center;
+          font-family: "Zen Maru Gothic", serif;
+          letter-spacing: 0.14px;
+          padding-top: 5px;
+          .hp-news-time {
+            padding-left: 12px;
+          }
         }
       }
     }
   }
-  .hp-news-fluent::before {
-    content: "";
-    width: 33px;
-    height: 33px;
-    border-radius: 180px;
-    background-image: url(../img/news-left.png);
-    position: absolute;
-    left: 2%;
-    bottom: -160px;
-    z-index: 10;
-  }
-  .hp-news-fluent::after {
-    content: "";
-    width: 33px;
-    height: 33px;
-    border-radius: 180px;
-    background-image: url(../img/news-right.png);
-    position: absolute;
-    right: 1.5%;
-    bottom: -160px;
-    z-index: 10;
-  }
+
   #hp-admission {
-    margin-top: 450px;
+    margin-top: 50px;
     padding-top: 1px;
     background-image: url(../img/green背景.png);
     p {
       margin: 80px auto 0;
       width: 80%;
       line-height: 50px;
+      font-family: "Zen Maru Gothic", serif;
     }
     ul {
       display: flex;
@@ -567,11 +590,12 @@ body {
       width: 80%;
       margin: 0 auto;
       padding-top: 10px;
-      font-family: HGSGothicM;
+      /* font-family: HGSGothicM; */
       font-size: 16px;
       font-weight: 400;
       line-height: 50px;
       letter-spacing: 1.12px;
+      font-family: "Zen Maru Gothic", serif;
       span {
         border-radius: 5px;
       }
@@ -637,7 +661,8 @@ body {
       margin: 30px auto 0;
       width: 90%;
 
-      font-family: HGSGothicM;
+      /* font-family: HGSGothicM; */
+      font-family: "Zen Maru Gothic", serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 50px;
@@ -666,6 +691,7 @@ body {
       figcaption {
         padding-top: 20px;
         letter-spacing: 0.1em;
+        font-family: "Zen Maru Gothic", serif;
       }
     }
   }
@@ -674,6 +700,7 @@ body {
 
 /*お問い合わせページ*/
 .contact-container {
+  font-family: "Zen Maru Gothic", serif;
   position: relative;
   z-index: 10;
   background-image: url(../img/green背景.png);
@@ -740,6 +767,7 @@ body {
 /*以下は模擬教室のパーツ*/
 /*模擬教室共通のパーツ*/
 .mockclass {
+  font-family: "Zen Maru Gothic", serif;
   height: 900px;
   width: 100%;
   max-width: 500px;
@@ -757,9 +785,10 @@ body {
   display: flex;
   flex-direction: column;
   .room-char {
+    position: relative;
     width: 100%;
     max-width: 500px;
-
+    height: 153px;
     display: flex;
     background: rgb(19, 177, 72);
     background: linear-gradient(
@@ -768,17 +797,57 @@ body {
       rgba(119, 188, 143, 1) 49%,
       rgba(22, 166, 71, 1) 100%
     );
+    div {
+      flex-grow: 1;
+    }
     .room-char-name {
+      width: 100%;
       font-weight: 800;
     }
     .room-char-text {
       font-size: 14px;
       letter-spacing: 0.1em;
       line-height: 22px;
-      height: 153px;
       overflow-y: scroll;
       width: 95%;
       margin: 0 auto;
+    }
+    #skipButton {
+      padding: 0 7px;
+      font-size: 18px;
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 163px;
+      background-color: rgb(128, 133, 120);
+      border-radius: 4px;
+    }
+    #nextButton {
+      padding: 0 7px;
+      font-size: 18px;
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: rgb(143, 187, 63);
+      border-radius: 10px;
+    }
+  }
+  .quit {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    background-color: #13b148;
+    border-radius: 30px;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    p {
+      font-weight: bold;
+      margin: 0 auto;
+      width: 20px;
+      font-size: 20px;
+      opacity: 0.6;
     }
   }
 }
@@ -803,136 +872,249 @@ body {
     .room771-whiteboard-text {
       position: absolute;
       right: 1.5%;
-      top: 20%;
+      top: 10%;
       width: 90%;
       letter-spacing: 0.1em;
-      height: 60px;
+      height: 70px;
       overflow-y: scroll;
     }
   }
-  .room771-screen {
+  .room771-ppt {
     position: relative;
     margin-top: -3px;
     background-color: #16151c;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    .room771-screen-header {
-      margin-top: 17px;
+
+    img {
+      height: fit-content;
+      width: 70%;
       display: block;
+      padding-top: 2%;
+      margin: auto auto;
+    }
+    .selectarea {
+      width: 80%;
+      height: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       p {
-        width: 90%;
-        margin: 0 auto;
-        background-color: #51514d;
-        color: white;
-        font-family: inter;
-        font-size: 14px;
+        width: 260px;
+        margin: auto;
         text-align: center;
-        opacity: 0.8;
-        img {
-          width: 12px;
-          padding-right: 5px;
-        }
+        background-color: #13b148;
+        padding: 5px 0;
+        border-radius: 50px;
+        font-family: HGPGothicE;
+        letter-spacing: 0.1em;
+        color: rgb(116, 54, 54);
+        font-size: 18px;
+        grid-column: 1/4;
       }
-    }
-
-    .room771-screen-op {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      .room771-screen-mock {
-        flex-grow: 1;
-        display: flex;
-        .room771-screen-nav {
-          list-style-type: none;
-          display: flex;
-          width: 95%;
-          padding-left: 5%;
-          margin: 0 auto;
-          background-color: #16151c;
-
-          gap: 2px;
-          li {
-            margin: 2px 0;
-            height: 25px;
-            width: 33%;
-            border: 2px solid #000;
-            padding-top: 4px;
-            background-color: rgb(31, 31, 31);
-            color: white;
-            font-size: 14px;
-            img {
-              width: 11px;
-              padding: 0 5px;
-            }
-          }
-          .room771-screen-nav-text.open {
-            font-weight: bold;
-            color: orange;
-          }
-        }
-        flex-grow: 1;
-
-        background-color: rgb(37, 35, 35);
-        .room771-screen-pass {
-          color: white;
-        }
-        .room771-screen-pass-title {
-          padding: 2px 5px 2px 5%;
-        }
-        .room771-screen-pass-now {
-          padding: 2px 0 2px 5px;
-        }
-      }
-    }
-
-    .mock-vs {
-      flex-grow: 1;
-      flex-direction: column;
-      .mock-vs-input {
-        flex-grow: 1;
-        display: none;
-        textarea {
-          margin: 2% 5%;
-          flex-grow: 1;
-        }
-      }
-      .mock-vs-input.open {
-        display: flex;
-      }
-    }
-    .mock-folder {
-      flex-grow: 1;
-      flex-direction: column;
-      /* display: flex; */
-      display: none;
-    }
-    .mock-browser {
-      flex-grow: 1;
-      flex-direction: column;
-      /* display: flex; */
-      display: none;
-    }
-    .room771-screen-footer {
-      display: flex;
-      justify-content: center;
-      list-style-type: none;
-      width: 100%;
-      background-color: #9e9e99;
-      gap: 10%;
-      li {
-        padding: 5px 5px 0 5px;
-        margin: 2px 0;
-
-        background-color: #686666;
-      }
-      .room771-screen-footer-icon.open {
-        background-color: #858585;
-        scale: 1.1;
+      .selectimg {
+        grid-row: 1/3;
+        width: 90%;
       }
     }
   }
+  /* p:hover {
+      background-color: #13b148;
+    } */
 }
+.room771-screen {
+  position: relative;
+  margin-top: -3px;
+  background-color: #16151c;
+  flex-grow: 1;
+  display: none;
+  flex-direction: column;
+  .room771-screen-header {
+    margin-top: 17px;
+    display: block;
+    p {
+      width: 90%;
+      margin: 0 auto;
+      background-color: #51514d;
+      color: white;
+      font-family: inter;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0.8;
+      img {
+        width: 12px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .room771-screen-op {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    .room771-screen-mock {
+      flex-grow: 1;
+      display: flex;
+      .room771-screen-nav {
+        list-style-type: none;
+        display: flex;
+        width: 95%;
+        padding-left: 5%;
+        margin: 0 auto;
+        background-color: #16151c;
+
+        gap: 2px;
+        li {
+          margin: 2px 0;
+          height: 25px;
+          width: 33%;
+          border: 2px solid #000;
+          padding-top: 4px;
+          background-color: rgb(31, 31, 31);
+          color: white;
+          font-size: 14px;
+          img {
+            width: 11px;
+            padding: 0 5px;
+          }
+        }
+        .room771-screen-nav-text.open {
+          font-weight: bold;
+          color: orange;
+        }
+      }
+      flex-grow: 1;
+
+      background-color: rgb(37, 35, 35);
+      .room771-screen-pass {
+        color: white;
+      }
+      .room771-screen-pass-title {
+        padding: 2px 5px 2px 5%;
+      }
+      .room771-screen-pass-now {
+        padding: 2px 0 2px 5px;
+      }
+    }
+  }
+
+  .mock-vs {
+    flex-grow: 1;
+    flex-direction: column;
+    .mock-vs-input {
+      flex-grow: 1;
+      display: none;
+      textarea {
+        background-color: #3b3737;
+        margin: 2% 5%;
+        flex-grow: 1;
+        color: white;
+      }
+    }
+    .mock-vs-input.open {
+      display: flex;
+    }
+  }
+  .mock-folder {
+    flex-grow: 1;
+    flex-direction: column;
+    /* display: flex; */
+    display: none;
+    .mock-folder-image {
+      display: block;
+      .mock-image {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+        width: 90%;
+        margin: 10px auto 0;
+        li {
+          width: 30%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .mock-key {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        li {
+          width: 30%;
+          margin: 0 auto;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .mock-image-switch {
+        display: none;
+      }
+      .mock-image-switch.open {
+        display: grid;
+      }
+    }
+    /* .mock-folder-image.open {
+        display: block;
+      } */
+  }
+  .mock-browser {
+    flex-grow: 1;
+    flex-direction: column;
+    /* display: flex; */
+    display: none;
+    .mock-chrome {
+      flex-grow: 1;
+      background-color: rgb(201, 197, 197);
+      width: 90%;
+      margin: 5px auto;
+      display: none;
+      .chrome-intro-text {
+        display: none;
+        h2 {
+          text-align: center;
+          margin-top: 25px;
+        }
+        p {
+          margin: 20px auto 0;
+          width: 90%;
+          line-height: 32px;
+        }
+      }
+      .chrome-intro-text.open {
+        display: block;
+      }
+      iframe {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #432a2a;
+      }
+    }
+    .mock-chrome.open {
+      display: flex;
+    }
+  }
+  .room771-screen-footer {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    width: 100%;
+    background-color: #9e9e99;
+    gap: 10%;
+    li {
+      padding: 5px 5px 0 5px;
+      margin: 2px 0;
+
+      background-color: #686666;
+    }
+    .room771-screen-footer-icon.open {
+      background-color: #858585;
+      scale: 1.1;
+    }
+  }
+}
+
 /*模擬教室771*/
 
 /*模擬教室772*/

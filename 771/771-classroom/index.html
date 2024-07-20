@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/mockclass.js" defer></script>
     <script src="../../js/771.js" defer></script>
     <title>オンラインオープンキャンパス｜日本電子専門学校Webデザイン科</title>
   </head>
   <body>
     <main class="mockclass room771">
       <section class="room771-background">
+        <!-- <button onclick="runCode()">実行</button> -->
         <img
           class="room771-roombackground"
           src="../../img/771mockbackgournd.png"
@@ -21,6 +23,10 @@
             position: relative position: relative position: relative
           </p>
         </div>
+      </section>
+      <section class="room771-ppt">
+        
+        <img class="room771-ppt-img" src="" alt="">
       </section>
       <section class="room771-screen">
         <div class="room771-screen-op">
@@ -64,6 +70,25 @@
                 <!-- browserの場合は、nowは要件とタイトル -->
                 <!-- folderの場合は、nowは背景素材と写真素材 -->
               </p>
+              <div class="mock-folder-image">
+                <ul class="mock-key mock-image-switch">
+                  <li><img src="" /></li>
+                  <li><img src="" /></li>
+                  <li><img src="" /></li>
+                </ul>
+                <ul class="mock-image mock-image-switch">
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                </ul>
+              </div>
+              
             </div>
             <div class="mock-vs">
               <ul class="room771-screen-nav nav-vs">
@@ -112,7 +137,7 @@
               <div class="mock-vs-input input-css">
                 <textarea name="css" id="mock-css"></textarea>
               </div>
-              <div class="mock-vs-input input-js open">
+              <div class="mock-vs-input input-js">
                 <textarea name="js" id="mock-js"></textarea>
               </div>
             </div>
@@ -124,7 +149,7 @@
                     class="room771-screen-nav-icon"
                     src="../../img/logo-chrome.png"
                     alt="folder"
-                  /><span class="room771-screen-nav-text">依頼内容</span>
+                  /><span class="room771-screen-nav-text">要件</span>
                 </li>
                 <li>
                   <img
@@ -144,6 +169,32 @@
                 <!-- browserの場合は、nowは要件とタイトル -->
                 <!-- folderの場合は、nowは背景素材と写真素材 -->
               </p>
+              <div class="mock-chrome chrome-intro">
+                <article class="chrome-intro-text chrome-intro-text-hobby">
+                  <h2>My hobbyサイト制作</h2>
+                  <p>
+                    お好きな<span class="span-stress">レイアウト</span
+                    >とお好きな趣味の<span class="span-stress">画像</span
+                    >を選んで、 <br /><span class="span-stress">説明文</span
+                    >を入れて自分なりの趣味ページを作ってみましょう！<br>
+                    
+                  </p>
+                </article>
+                <article class="chrome-intro-text chrome-intro-text-mybas">
+                  <h2>まいばすけっと <br />おすすめ商品サイト制作</h2>
+                  <p>
+                    お好きな
+                    <span class="span-stress">レイアウト</span
+                    >とおすすめになりそうな商品の<span class="span-stress"
+                      >画像</span
+                    >を選んで、<br /><span class="span-stress">説明文</span
+                    >を入れて自分なりのおすすめ商品ページを作ってみましょう！<br>
+                  </p>
+                </article>
+              </div>
+              <div class="mock-chrome chrome-react">
+                <iframe id="output"></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -160,16 +211,14 @@
           </li>
         </ul>
       </section>
+
       <section class="room-char">
         <img src="../../img/Rectangle56ibuki.png" alt="ibuki" />
         <div>
           <p class="room-char-name">いぶき：</p>
-          <p class="room-char-text">
-            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
-            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
-            コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
-          </p>
-        </div>
+          <p class="room-char-text"></p>
+          <button id="nextButton">進む⇒</button>
+          <button id="skipButton">スキップ</button>
       </section>
     </main>
   </body>
