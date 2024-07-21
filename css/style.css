@@ -346,7 +346,9 @@ body {
     right: 5.5%;
   }
 }
-
+.comment {
+  color: green; /* コメントの文字色を緑色に設定 */
+}
 /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/ /*共通のパーツでした*/
 
 /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/ /*ホームページ*/
@@ -814,13 +816,14 @@ body {
     }
     #skipButton {
       padding: 0 7px;
-      font-size: 18px;
+      font-size: 12px;
       display: none;
       position: absolute;
       bottom: 0;
       left: 163px;
       background-color: rgb(128, 133, 120);
       border-radius: 4px;
+      color: white;
     }
     #nextButton {
       padding: 0 7px;
@@ -888,7 +891,7 @@ body {
 
     img {
       height: fit-content;
-      width: 70%;
+      width: 65%;
       display: block;
       padding-top: 2%;
       margin: auto auto;
@@ -912,6 +915,7 @@ body {
         color: rgb(116, 54, 54);
         font-size: 18px;
         grid-column: 1/4;
+        box-shadow: 10px 5px 5px green;
       }
       .selectimg {
         grid-row: 1/3;
@@ -1024,30 +1028,38 @@ body {
     .mock-folder-image {
       display: block;
       .mock-image {
+        background-color: white;
+        list-style-type: none;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         gap: 5px;
         width: 90%;
         margin: 10px auto 0;
         li {
-          width: 30%;
+          width: 100%;
+          text-align: center;
 
           img {
-            width: 100%;
+            width: 50%;
           }
         }
       }
       .mock-key {
+        list-style-type: none;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
+
         li {
           width: 30%;
           margin: 0 auto;
+          color: white;
           img {
             width: 100%;
           }
         }
       }
+
       .mock-image-switch {
         display: none;
       }
@@ -1334,7 +1346,7 @@ body {
       margin: 0 10%;
       display: none;
       font-size: 14px;
-      color: black;
+      color: #6f5555;
       padding-top: 22px;
       .life-mock-game-switch-button {
         display: block;
@@ -1426,7 +1438,11 @@ body {
     }
   }
   .omikuji-video {
+    text-align: center;
     display: none;
+    video {
+      margin: 0 auto;
+    }
   }
   .life-mock-gamewindow-text {
     width: 50%;
