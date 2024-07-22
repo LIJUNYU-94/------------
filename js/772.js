@@ -60,6 +60,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "今の企画を考えると、ターゲットは誰だと思いますか？",
     "そして、店側は何をしたらいいでしょうか？",
   ];
+  const chatMbScreen = [
+    "これからいろいろ考えて見て！複数の質問があるので答えを入力してください！",
+    "学校に近いのに利用者数は少ない原因？",
+    "自分が利用しますか",
+    "まいばすけっとの強み",
+    "競争力が足りないところ",
+    "ターゲット設定",
+    "クライアントへの提案",
+  ];
   const chatFeedback = [
     "それでは、今回の考えたことを全部画面に映した！",
     "企画はたいていわかりましたか？大丈夫です！みんな入学後でもそれを理解するために凄く時間かかりましたよ",
@@ -150,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton.addEventListener("click", screenInput(currentDialogue));
         if (currentDialogue < ibukiNow.length) {
           startDialogue();
+          pcText.innerHTML = chatMbScreen[currentDialogue];
           nextButton.removeEventListener("click", screenInput);
         } else {
           pcInput.style.display = "none";
