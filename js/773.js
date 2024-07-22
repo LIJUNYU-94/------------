@@ -546,7 +546,7 @@ const nakayoshi = [];
 //仲良しさんチームの組み合わせ
 const whiteboard = [
   "../../img/whiteboard1.png",
-  "../../img/whiteboard2.png",
+  "../../img/whiteboard1.png",
   "../../img/whiteboard3.png",
   "../../img/whiteboard4.png",
   "../../img/whiteboard5.png",

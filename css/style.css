@@ -554,6 +554,7 @@ body {
         height: 100px;
         background-color: #13b148;
         border-radius: 10px;
+        box-shadow: 3px 5px 3px green;
       }
       a {
         line-height: 24px;
@@ -1141,6 +1142,7 @@ body {
       position: absolute;
       top: 17%;
       left: 5%;
+      display: none;
       iframe {
         position: absolute;
         top: 3%;
@@ -1160,7 +1162,7 @@ body {
       position: absolute;
       top: 17%;
       left: 5%;
-      /* display: none; */
+      display: none;
       /* jsで、入ってからここがblockにする */
     }
     .room772-pc {
@@ -1181,20 +1183,26 @@ body {
       .room772-pc-screen {
         .room772-pc-screen-text {
           width: 70%;
-          height: 30%;
+          height: 50%;
           position: absolute;
           top: 23%;
           left: 13%;
           overflow-y: scroll;
+          scrollbar-width: thin;
+          scrollbar-color: #888 #f1f1f1;
         }
+
         .room772-pc-screen-input {
-          display: flex;
+          display: none;
           width: 70%;
+          height: 15%;
           justify-content: space-between;
           position: absolute;
           top: 58%;
-          left: 13%;
+          left: 14%;
           font-size: 14px;
+          border: #13b148 1px solid;
+          box-shadow: 1px 1px 1px green;
           button {
             display: inline-block;
             background-color: #13b148;
@@ -1202,9 +1210,8 @@ body {
             border-radius: 4px;
             padding: 0 5px;
           }
-          input {
+          #pro-screen-input {
             width: 100%;
-            color: #13b148;
           }
         }
       }

@@ -653,6 +653,8 @@ document.addEventListener("DOMContentLoaded", function () {
           whiteboardText.innerText = whiteboard[0];
           return;
         }
+      } else {
+        return;
       }
     }
     function skipclicked() {
