@@ -474,6 +474,7 @@ body {
       .hp-seventh-room {
         float: right;
         padding: 0 0 10px 10px;
+        width: 10%;
       }
       a {
         text-decoration: none;
@@ -688,6 +689,7 @@ body {
       width: 100%;
       position: absolute;
       top: 0;
+
       opacity: 0.7;
     }
     figure {
@@ -1465,3 +1467,230 @@ body {
 }
 
 /*模擬教室773*/
+/*レスポンシブ設定*/
+
+@media (min-width: 1024px) {
+  body {
+    #container {
+      max-width: 1920px;
+    }
+
+    .background {
+      max-width: 1920px;
+      height: 1500px;
+    }
+    h3::before {
+      width: 10%;
+      left: 45%;
+    }
+    .pc-only {
+      display: block;
+    }
+    .phone-only {
+      display: none;
+    }
+    header {
+      padding-top: 50px;
+      h1 {
+        padding-left: 80px;
+        margin: 35px auto;
+
+        a {
+          text-align: left;
+        }
+        span {
+          padding-left: 28px;
+        }
+        .logo {
+          top: 0;
+          left: 25px;
+        }
+      }
+    }
+    .all-nav {
+      position: absolute;
+      top: 125px;
+      right: 5%;
+      z-index: 18;
+      width: fit-content;
+      ul {
+        display: flex;
+        width: fit-content;
+        list-style-type: none;
+        li {
+          a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+          }
+          padding: 0 20px;
+        }
+      }
+      .all-contact {
+        display: block;
+        width: fit-content;
+        position: absolute;
+        top: -68px;
+        right: 0px;
+      }
+    }
+    footer {
+      max-width: 2920px;
+      width: 100%;
+      height: 170px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      position: relative;
+      z-index: 20;
+      ul {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        li {
+          width: 20%;
+          padding-top: 40px;
+          text-align: center;
+        }
+      }
+      small {
+        position: relative;
+        top: 20px;
+      }
+    }
+    .hp-container {
+      .hp-firstview {
+        margin-top: 100px;
+        width: 90%;
+        grid-template-rows: auto auto;
+        .hp-laptop {
+          margin-left: 20%;
+        }
+        .hp-keyvisual {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+        h2 {
+          margin-left: 15%;
+        }
+        p {
+          grid-column: 2/3;
+          grid-row: 2/3;
+          width: fit-content;
+          margin: 0 auto;
+          font-size: 140%;
+        }
+        p::before {
+          display: none;
+        }
+      }
+      .hp-article {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 50px;
+        p {
+          width: 80%;
+          font-size: 18px;
+        }
+      }
+      .hp-seventh {
+        figure {
+          width: 80%;
+        }
+
+        ul {
+          .hp-seventh-img {
+            width: 100%;
+            float: none;
+          }
+          .hp-seventh-room {
+            float: none;
+            padding: 0 0 10px 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            width: fit-content;
+          }
+          width: 100%;
+          flex-flow: row;
+          justify-content: space-around;
+          li {
+            width: 20%;
+            border: 2px solid #13b148;
+            position: relative;
+
+            p {
+              padding: 10px 10px;
+            }
+            .hp-seventh-title {
+              font-size: 24px;
+              padding: 20px 0 20px 25%;
+              font-family: "Zen Maru Gothic", serif;
+              color: #000;
+              font-weight: bold;
+              background-color: rgb(202, 195, 195);
+            }
+          }
+        }
+      }
+      #hp-admission {
+        p {
+          width: 50%;
+          text-align: center;
+          margin: 80px auto 0;
+        }
+        ul {
+          width: 50%;
+        }
+        li:nth-child(2) {
+          a {
+            padding-top: 36px;
+          }
+        }
+      }
+    }
+    .all-room-title {
+      font-size: 28px;
+      padding-top: 100px;
+    }
+    .sub-keyvisual {
+      width: 80%;
+    }
+    .enter {
+      width: 100px;
+      right: 15%;
+    }
+    .code-container {
+      p {
+        padding-top: 100px;
+        width: 60%;
+        font-size: 18px;
+        text-align: center;
+      }
+      .phone-only {
+        display: none;
+      }
+    }
+    .life-container {
+      article {
+        p {
+          width: 70%;
+          text-align: center;
+        }
+        .life-mock-text::before {
+          left: 0;
+        }
+      }
+    }
+    .contact-container {
+      width: 80%;
+      margin: 80px auto;
+      padding-bottom: 200px;
+      .contact-submit {
+        margin: 80px auto 0s;
+      }
+    }
+  }
+}
